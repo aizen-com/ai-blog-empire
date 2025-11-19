@@ -1,1 +1,1 @@
-# ai-blog-empire
+# rich.in
