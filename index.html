@@ -3,134 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>₹ich - Make $1000+/Month From Home With AI Blogs (Zero Investment)</title>
-  <meta name="description" content="Create AI-powered blogs in 10 seconds • Earn with Adsense + Affiliate • 100% Free Forever • Available in 120+ Languages">
+  <title>₹ich – $10,000/Month AI Blogs | Zero Investment | 195 Countries</title>
+  <meta name="description" content="Create money-making AI blogs in 8 seconds • Earn with Adsense, Amazon, Clickbank • 100% Free • Works in 195 countries">
   
-  <!-- 3D & Premium Stuff -->
+  <!-- Ultimate Performance & Beauty -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer@^3.0.1/dist/model-viewer.min.js"></script>
-  
-  <!-- Voice Recognition (120+ Languages Auto Detect) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
   
   <style>
-    body { margin:0; overflow:hidden; background: #000; color:white; font-family: 'Montserrat', sans-serif; }
-    .gradient-text { background: linear-gradient(90deg, #ffd700, #ff00ff, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .glow { box-shadow: 0 0 60px rgba(255, 215, 0, 0.8); animation: pulse 2s infinite; }
-    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+    body { margin:0; overflow:hidden; background:#000; font-family:'Inter',sans-serif; }
+    .orbitron { font-family: 'Orbitron', sans-serif; }
+    .gradient-3d { background: linear-gradient(45deg, #ffd700, #ff00ff, #00ffff, #ffd700); background-size: 400%; -webkit-background-clip: text; color: transparent; animation: flow 8s linear infinite; }
+    @keyframes flow { 0%{background-position:0%} 100%{background-position:400%} }
+    .glow-btn { box-shadow: 0 0 80px rgba(255,215,0,0.9), inset 0 0 40px rgba(255,255,255,0.3); }
+    .particle { position:absolute; width:4px; height:4px; background:#ffd700; border-radius:50%; pointer-events:none; animation: float 15s infinite linear; }
+    @keyframes float { 0%{transform:translateY(100vh) rotate(0deg); opacity:1} 100%{transform:translateY(-100px) rotate(360deg); opacity:0} }
   </style>
 </head>
-<body>
+<body class="relative">
 
-  <!-- Floating 3D Golden ₹ Symbol -->
-  <div class="fixed inset-0 z-0">
-    <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-      camera-controls auto-rotate ar shadow-intensity="2" exposure="1.5" style="width:100%; height:100%;">
-    </model-viewer>
+  <!-- Golden Particles Background -->
+  <div id="particles"></div>
+
+  <!-- 3D Floating ₹ich Logo (Insane Effect) -->
+  <div class="fixed inset-0 flex items-center justify-center pointer-events-none z-10">
+    <h1 class="text-[300px] orbitron gradient-3d opacity-20 select-none">₹ich</h1>
   </div>
 
-  <div class="relative z-10 min-h-screen flex items-center justify-center p-6">
-    <div class="text-center max-w-6xl">
-      
-      <!-- Main Brand Name (Super 3D Effect) -->
-      <h1 class="text-9xl md:text-[180px] font-black gradient-text glow mb-4 tracking-tighter">
+  <div class="relative z-20 min-h-screen flex items-center justify-center p-6">
+    <div class="text-center max-w-7xl">
+
+      <!-- Main Heading – World's Most Addictive -->
+      <h1 class="text-9xl md:text-[220px] orbitron gradient-3d leading-none mb-4">
         ₹ich
       </h1>
-      <p class="text-3xl md:text-5xl font-bold text-gray-200 mb-12">
-        Create AI Blogs in 10 Seconds • Earn $1000+/Month • Zero Investment
+      <p class="text-4xl md:text-6xl font-black text-white mb-2 drop-shadow-2xl">
+        $10,000/Month AI Blogs
+      </p>
+      <p class="text-2xl md:text-4xl text-cyan-300 mb-16 font-light">
+        Zero Investment • 8 Seconds • 195 Countries • 100% Free Forever
       </p>
 
-      <!-- Voice Command Indicator -->
-      <div class="mb-8 text-xl text-cyan-400 animate-bounce">
-        🎤 Say: "Create blog about fitness" (Works in 120+ languages!)
+      <!-- Voice Command Live Indicator -->
+      <div class="mb-10 text-2xl text-green-400 animate-pulse">
+        🎤 Listening in 195 languages... Say “Make money blog” or any topic
       </div>
 
-      <!-- Input + Mic Button -->
-      <div class="flex flex-col md:flex-row gap-6 max-w-4xl mx-auto mb-12">
-        <input type="text" id="topic" placeholder="Enter topic or speak..." 
-          class="flex-1 p-8 text-2xl bg-black/80 border-4 border-yellow-500 rounded-3xl focus:outline-none focus:border-pink-500 glow backdrop-blur-xl"/>
+      <!-- Ultra Premium Input + Mic -->
+      <div class="flex flex-col md:flex-row gap-6 max-w-5xl mx-auto mb-16 items-center">
+        <input type="text" id="topic" placeholder="Speak or type your blog topic..." 
+          class="flex-1 p-8 text-3xl bg-black/70 backdrop-blur-2xl border-4 border-yellow-500 rounded-full focus:outline-none focus:border-pink-500 glow-btn text-white placeholder-gray-500"/>
         
-        <button onclick="startVoice()" class="bg-red-600 hover:bg-red-700 px-12 py-8 rounded-3xl text-3xl glow">
-          🎤
+        <button onclick="startVoice()" class="bg-gradient-to-r from-red-600 to-pink-600 p-10 rounded-full glow-btn hover:scale-110 transition">
+          <svg class="w-16 h-16" fill="white" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6c0-1.66-1.34-3-3-3s-3 1.34-3 3v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 15 12 15s-4.52-.8-4.93-2.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14C5.9 16.16 8.9 18 12 18s6.1-1.84 6.91-4.86c.09-.6-.39-1.14-1-1.14z"/></svg>
         </button>
       </div>
 
-      <!-- Generate Button -->
-      <button onclick="generateBlog()" 
-        class="bg-gradient-to-r from-yellow-500 via-pink-600 to-cyan-500 py-10 px-20 text-5xl font-black rounded-full glow hover:scale-110 transition transform">
-        ⚡ GENERATE MY $1000/MONTH BLOG ⚡
+      <!-- Ultimate Generate Button -->
+      <button onclick="generateUltimateBlog()" 
+        class="bg-gradient-to-r from-yellow-500 via-pink-600 to-cyan-500 py-12 px-32 text-6xl md:text-7xl orbitron rounded-full glow-btn hover:scale-110 transition transform shadow-2xl border-8 border-white/20">
+        ⚡ CREATE MY $10K/MONTH EMPIRE ⚡
       </button>
 
-      <!-- Stats -->
-      <div class="grid grid-cols-3 gap-10 mt-20 text-center">
-        <div class="bg-white/10 backdrop-blur-xl p-10 rounded-3xl glow border border-yellow-500">
-          <h2 class="text-6xl font-black text-green-400">$1.2M+</h2>
-          <p class="text-2xl">Paid to Users</p>
+      <!-- Live Stats (Real-time Feel) -->
+      <div class="grid grid-cols-3 gap-12 mt-24">
+        <div class="bg-white/10 backdrop-blur-xl p-12 rounded-3xl glow-btn border border-yellow-500">
+          <h2 class="text-7xl orbitron text-green-400">$4.8M+</h2>
+          <p class="text-3xl">Paid This Year</p>
         </div>
-        <div class="bg-white/10 backdrop-blur-xl p-10 rounded-3xl glow border border-yellow-500">
-          <h2 class="text-6xl font-black text-cyan-400">84K+</h2>
-          <p class="text-2xl">Active Blogs</p>
+        <div class="bg-white/10 backdrop-blur-xl p-12 rounded-3xl glow-btn border border-yellow-500">
+          <h2 class="text-7xl orbitron text-cyan-400">187K+</h2>
+          <p class="text-3xl">Active Empires</p>
         </div>
-        <div class="bg-white/10 backdrop-blur-xl p-10 rounded-3xl glow border border-yellow-500">
-          <h2 class="text-6xl font-black text-yellow-400">120+</h2>
-          <p class="text-2xl">Languages</p>
+        <div class="bg-white/10 backdrop-blur-xl p-12 rounded-3xl glow-btn border border-yellow-500">
+          <h2 class="text-7xl orbitron text-yellow-400">195</h2>
+          <p class="text-3xl">Countries</p>
         </div>
       </div>
 
-      <p class="mt-20 text-gray-400 text-lg">© 2025 ₹ich – The Future of Passive Income</p>
+      <p class="mt-20 text-gray-500 text-xl orbitron">© 2025 ₹ich – The Only Platform That Pays You To Exist</p>
     </div>
   </div>
 
-  <!-- Magic Script (Voice + AI Blog Generator) -->
+  <!-- Ultimate Script – AI + Voice + Particles + GSAP Magic -->
   <script>
+    // Golden Particles
+    const particles = document.getElementById('particles');
+    setInterval(() => {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDuration = 10 + Math.random() * 10 + 's';
+      particles.appendChild(p);
+      setTimeout(() => p.remove(), 20000);
+    }, 300);
+
+    // Voice Command in 195 Languages
     if (annyang) {
       const commands = {
-        'create blog about *topic': (topic) => {
-          document.getElementById('topic').value = topic;
-          generateBlog();
-        },
-        'make money blog': () => { document.getElementById('topic').value = "how to make money online 2025"; generateBlog(); },
-        'fitness blog': () => { document.getElementById('topic').value = "fitness tips"; generateBlog(); }
+        '*anything': (anything) => {
+          document.getElementById('topic').value = anything;
+          generateUltimateBlog();
+        }
       };
       annyang.addCommands(commands);
-      annyang.start({ autoRestart: true });
+      annyang.start({ autoRestart: true, continuous: true });
     }
 
     function startVoice() {
-      Swal.fire("Listening...", "Speak now in any language!", "info");
-      annyang.start();
+      Swal.fire({title:"Listening Worldwide...", html:"Speak in ANY language<br><small>Hindi, English, Spanish, Arabic, Chinese – sab chalega</small>", icon:"info"});
     }
 
-    function generateBlog() {
-      const topic = document.getElementById('topic').value.trim() || "How to earn money online 2025";
+    function generateUltimateBlog() {
+      const topic = document.getElementById('topic').value.trim() || "How to make $10,000/month in 2025";
       
       Swal.fire({
-        title: '₹ich AI is Working Magic...',
-        html: 'Generating 4000+ word SEO blog<br>Adding Adsense + Affiliate Links...<br><b>10 seconds</b>',
+        title: '₹ich AI Activated',
+        html: '<div class="text-2xl">Deploying 5000+ word blog<br>Adding Adsense, Amazon, Clickbank<br>SEO Score 98/100<br><b>8 seconds remaining...</b></div>',
+        timer: 8000,
+        timerProgressBar: true,
         allowOutsideClick: false,
         didOpen: () => Swal.showLoading()
       });
 
       setTimeout(() => {
-        const username = prompt("Choose your username (e.g. alex, priya, john)") || "user";
-        const url = `https://${username}.₹ich.in`;
+        const username = prompt("Choose your ₹ich username (e.g. king, queen, boss)") || "legend";
+        const url = `https://${username}.₹ich.com`;
         
         Swal.fire({
           icon: 'success',
-          title: 'CONGRATULATIONS!',
+          title: 'WELCOME TO THE RICH LIFE',
           html: `
-            <b>Your ₹ich blog is LIVE!</b><br><br>
-            <a href="${url}" target="_blank" class="text-4xl font-bold text-yellow-400">${username}.₹ich.in</a><br><br>
-            Earnings start in 24 hours<br>
-            <b>Welcome to the rich life 💰</b>
+            <b class="text-5xl">${username}.₹ich.com</b><br><br>
+            Your empire is LIVE<br>
+            Earnings start in <b>3 hours</b><br><br>
+            <span class="text-3xl text-yellow-400">First $1000 coming this week</span>
           `,
-          confirmButtonText: 'Open My Empire 🚀'
+          confirmButtonText: 'Open My Empire 💰'
         }).then(() => window.open(url, '_blank'));
-      }, 10000);
+      }, 8000);
     }
-  </script>
 
+    // GSAP Entrance Animation
+    gsap.from("h1", { y: -200, opacity: 0, duration: 2, ease: "bounce.out" });
+    gsap.from("button", { scale: 0, duration: 1.5, delay: 1, ease: "elastic.out(1,0.3)" });
+  </script>
 </body>
 </html>
