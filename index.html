@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AiZen – Smart Mind • Zen Soul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1FD9D9;
+    --primary-dark: #0fa8a8;
+    --dark: #090a1a;
+    --light: #f0f8ff;
+    --accent: #9d4edd;
+    --secondary: #4361ee;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 20% 20%, #090a1a 0%, #0d0f2c 40%, #151632 100%);
+    color: var(--light);
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, rgba(31, 217, 217, 0.1) 0%, rgba(157, 78, 221, 0.1) 100%);
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  
+  .intro-text {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+  
+  /* Main Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+  
+  /* AI Chat Section */
+  .ai-section {
+    background: rgba(13, 15, 44, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 3rem 0;
+    border: 1px solid rgba(31, 217, 217, 0.2);
+  }
+  
+  .ai-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ai-icon {
+    font-size: 2rem;
+  }
+  
+  #chat-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .chat-message {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .user-message {
+    background: rgba(67, 97, 238, 0.2);
+    margin-left: auto;
+    border: 1px solid rgba(67, 97, 238, 0.3);
+  }
+  
+  .ai-message {
+    background: rgba(31, 217, 217, 0.1);
+    border: 1px solid rgba(31, 217, 217, 0.2);
+  }
+  
+  .message-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .input-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  #user-input {
+    flex: 1;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  #user-input:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  #send-button {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    border-radius: 10px;
+    color: var(--dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  #send-button:hover {
+    transform: scale(1.05);
+  }
+  
+  #send-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Meditation Timer */
+  .meditation-timer {
+    background: 
